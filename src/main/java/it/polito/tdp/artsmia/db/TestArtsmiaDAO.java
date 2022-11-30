@@ -1,6 +1,7 @@
 package it.polito.tdp.artsmia.db;
 
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 import it.polito.tdp.artsmia.model.ArtObject;
 
@@ -10,9 +11,10 @@ public class TestArtsmiaDAO {
 
 		ArtsmiaDAO dao = new ArtsmiaDAO();
 			
-		List<ArtObject> objects = dao.listObjects();
-		System.out.println(objects.get(0));
-		System.out.println(objects.size());
+		Map<Integer, ArtObject> idMap = new HashMap<>();
+		dao.listObjects(idMap);
+		System.out.println(idMap.get(0));
+		System.out.println(idMap.size());
 	}
 
 }
